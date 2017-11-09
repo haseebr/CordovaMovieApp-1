@@ -21,7 +21,7 @@ $(document).on('pagebeforeshow', '#headline', function(){
     $('#movie-data').empty();
     $.each(movieInfo.result, function(i, row) {
         if(row.id == movieInfo.id) {
-            $('#movie-data').append('<li><img src="http://image.tmdb.org/t/p/w92'+row.poster_path+'"></li>');
+            $('#movie-data').append('<li><img width="53px" src="http://image.tmdb.org/t/p/w92'+row.poster_path+'"></li>');
             $('#movie-data').append('<li>Title: '+row.original_title+'</li>');
             $('#movie-data').append('<li>Release date'+row.release_date+'</li>');
             $('#movie-data').append('<li>Popularity : '+row.popularity+'</li>');   
@@ -46,7 +46,7 @@ var ajax = {
         movieInfo.result = result.results;
         $.each(result.results, function(i, row) {
             console.log(JSON.stringify(row));
-            $('#movie-list').append('<li><a href="" data-id="' + row.id + '"><img src="http://image.tmdb.org/t/p/w92'+row.poster_path+'"/><h3>' + row.title + '</h3><p>' + row.vote_average + '/10</p></a></li>');
+            $('#movie-list').append('<li><a href="" data-id="' + row.id + '"><img width="53px" src="http://image.tmdb.org/t/p/w92'+row.poster_path+'"/><h3>' + row.title + '</h3><p>' + row.vote_average + '/10</p></a></li>');
         });
         $('#movie-list').listview('refresh');
     }
